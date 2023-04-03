@@ -1,13 +1,7 @@
 package jsonutils
 
-import "fmt"
-
-const (
-	Start = iota
-	InObject
-	InArray
-	InString
-	End
+import (
+	"fmt"
 )
 
 type report struct {
@@ -21,8 +15,10 @@ type report struct {
 }
 
 // validate a json string
+// ref: https://restfulapi.net/json-data-types/
 // ! UNCOMPLETED
 func Validate(json string) bool {
+	// pattern := regexp.MustCompile(`[a-z]`)
 	var r report
 	r.isValid = true
 	var s stack
